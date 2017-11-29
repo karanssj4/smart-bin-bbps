@@ -18,6 +18,7 @@
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">
@@ -185,7 +186,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Analytics</h3>
+                <h3>BBPS Bin Settings</h3>
               </div>
 
               <div class="title_right">
@@ -206,7 +207,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Minimum Temperature</h2>
+                    <h2>Settings</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -216,127 +217,17 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                      <div id="minTempChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Maximum Temperature</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div id="maxTempChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Average Temperature</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div id="avgTempChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Average Humidity</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div id="avgHumChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Most Active Time</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div id="mostActiveTimeChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Number of Autocleans</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div id="autoCleansChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Capacity used as of morning</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div id="morningPercentChart"></div>
+                    <h3>Live Data Logging Status: <span id = 'status1'></span></h3>
+                    <button type="button" class="btn btn-success" onclick="setStatus(1)">Enable Live data Logging</button>
+                    <br>
+                    <button type="button" class="btn btn-danger" onclick="setStatus(2)">Disable Live data Logging</button>
+                    <br><br><br>
+                    <h3>Dustbin level Status: <span id = 'status2'></span></h3>
+                    <button type="button" class="btn btn-success" onclick="setStatus(3)">Set Dustbin to full</button>
+                    <br>
+                    <button type="button" class="btn btn-danger" onclick="setStatus(4)">Set Dustbin to not full</button>
+                    <br><br><br>
+                    <button type="button" class="btn btn-primary" onclick="getStatus()">Get Status</button>
                   </div>
                 </div>
               </div>
@@ -366,142 +257,63 @@
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
 
-    <!-- Load c3.css -->
-    <link href="../vendors/c3/c3.min.css" rel="stylesheet">
-
-    <!-- Load d3.js and c3.js -->
-    <script src="../vendors/c3/d3.min.js" charset="utf-8"></script>
-    <script src="../vendors/c3/c3.min.js"></script>
-
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
 
     <script>
-    var chartTypeSpline = {
-      'bin #1': 'spline',
-      'bin #2': 'spline',
-      'bin #3': 'spline',
-      'bin #4': 'spline',
-      'bin #5': 'spline',
-      'bin #6': 'spline',
-      'bin #7': 'spline',
-      'bin #8': 'spline',
-      'bin #9': 'spline',
-      'bin #10': 'spline',
-      'bin #11': 'spline',
-      'bin #12': 'spline',
-      'bin #13': 'spline'
-    };
+    var url = 'https://smart-bin-0.firebaseio.com/liveDataLogging/'
+    function getStatus() {
+      $.get(url+ '.json', function(data, status){
+        // console.log(data);
+        // console.log(status);
+        if (status == 'success') {
+          if(data.isEnabled) {
+            $('#status1').text('Enabled')
+          } else {
+            $('#status1').text('Disabled')
+          }
 
-    var minTempColumns;
-    var myData, mydata2;
-    $.ajax({
-      url: '../build/res/data4.json',
-      dataType: 'json',
-      async: false,
-      success: function(data) {
-        console.log(data);
-        myData = data;
-      }
-    });
-
-    var minTempChart = c3.generate({
-      bindto: '#minTempChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.minTemp,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
+          if(data.isFull) {
+            $('#status2').text('Full')
+          } else {
+            $('#status2').text('Not Full')
+          }
         }
-      }
-    });
+      });
+    }
 
-    var maxTempChart = c3.generate({
-      bindto: '#maxTempChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.maxTemp,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
-        }
+    function setStatus(x) {
+      var url2, data2;
+      if(x == 1) {
+        data2 = {isEnabled: true};
       }
-    });
+      if(x == 2) {
+        data2 = {isEnabled: false};
+      }
+      if(x == 3) {
+        data2 = {isFull: true};
+      }
+      if(x == 4) {
+        data2 = {isFull: false};
+      }
 
-    var avgTempChart = c3.generate({
-      bindto: '#avgTempChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.avgTemp,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
-        }
-      }
-    });
+      $.ajax({
+         url: url + '.json',
+         data: JSON.stringify(data2),
+         error: function() {
+            console.log('Error');
+         },
+         dataType: 'json',
+         success: function(data) {
+            // console.log('success');
+            getStatus();
+         },
+         type: 'PATCH'
+      });
 
-    var avgHumChart = c3.generate({
-      bindto: '#avgHumChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.avgHum,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
-        }
-      }
-    });
+    }
 
-    var mostActiveTimeChart = c3.generate({
-      bindto: '#mostActiveTimeChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.mostActiveTime,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
-        }
-      }
-    });
-
-    var autoCleansChart = c3.generate({
-      bindto: '#autoCleansChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.autoCleans,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
-        }
-      }
-    });
-
-    var morningPercentChart = c3.generate({
-      bindto: '#morningPercentChart',
-      data: {
-        types: chartTypeSpline,
-        columns: myData.morningPercent,
-      },
-      axis: {
-        x: {
-          type: 'category',
-          categories: myData.dates
-        }
-      }
-    });
+    getStatus();
 
     </script>
   </body>
